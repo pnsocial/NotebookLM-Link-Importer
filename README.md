@@ -21,6 +21,18 @@ Chrome extension (Manifest V3) that sends **web links** and **open browser tabs*
 - **Local convenience**  
   Remembers the last selected notebook in extension storage.
 
+## Screenshots
+
+### Popup — quick import
+
+![Popup — quick import](docs/screenshots/popup.png)
+
+### Bulk import — full page (links / tabs)
+
+![Bulk import — full page](docs/screenshots/bulk-import.png)
+
+---
+
 ## Permissions
 
 | Permission | Why |
@@ -98,6 +110,7 @@ Then open `chrome://extensions` and click **Reload** on this extension’s card.
 notebooklm-link-importer/
 ├── .github/workflows/
 │   └── release.yml        # Tag v* → build ZIP and GitHub Release
+├── docs/screenshots/      # README screenshots (PNG/WebP)
 ├── public/icons/          # Toolbar icons (PNG); regenerate with npm run generate-icons
 ├── scripts/
 │   └── generate-icons.mjs
