@@ -1,5 +1,7 @@
 # NotebookLM Link Importer
 
+> **Vibecode notice:** This is a **vibecode** project (rapid, AI-assisted development). It is **not** official or endorsed by Google. **Use at your own risk**—review imports, notebook contents, and privacy implications before relying on it for important work.
+
 Chrome extension (Manifest V3) that sends **web links** and **open browser tabs** into your [NotebookLM](https://notebooklm.google.com) notebooks. It talks to NotebookLM using the same `batchexecute` flow as the official web app, while you stay signed in with your Google account in the browser.
 
 ## Features
