@@ -31,9 +31,22 @@ Chrome extension (Manifest V3) that sends **web links** and **open browser tabs*
 
 No separate API key: authentication follows your **Google session** for NotebookLM in Chrome.
 
+## Install from GitHub Release (no Node.js)
+
+Pre-built ZIP files are attached to **Releases** on this GitHub repository (when maintainers publish a version). Open the repo → **Releases**, or append `/releases` to the repository URL. **You do not need to install Node.js or run `npm run build`.**
+
+1. Open the **Releases** page for this repository and download **`NotebookLM-Link-Importer-vX.Y.Z.zip`** from the latest release.
+2. Unzip the file. The extracted folder must contain **`manifest.json`** at the top level (if macOS adds an extra wrapper folder, open it until you see `manifest.json`).
+3. In Chrome, go to `chrome://extensions`, turn **Developer mode** on, click **Load unpacked**, and select **that folder** (the one that directly contains `manifest.json`).
+4. Pin the extension from the puzzle icon if you like, then sign in to [NotebookLM](https://notebooklm.google.com) in a normal tab so imports can use your account.
+
+To update later, download a newer release ZIP, remove the old extension from `chrome://extensions`, then load unpacked again using the new folder (or use **Reload** if you overwrote the same folder).
+
+---
+
 ## Install in Chrome (local, from source)
 
-This extension is not distributed on the Chrome Web Store in this repo. Install it yourself from a built copy of the project.
+This extension is not on the Chrome Web Store. You can also build it yourself from this repository.
 
 ### 1. Download the project
 
@@ -83,6 +96,8 @@ Then open `chrome://extensions` and click **Reload** on this extension’s card.
 
 ```
 notebooklm-link-importer/
+├── .github/workflows/
+│   └── release.yml        # Tag v* → build ZIP and GitHub Release
 ├── public/icons/          # Toolbar icons (PNG); regenerate with npm run generate-icons
 ├── scripts/
 │   └── generate-icons.mjs
@@ -101,7 +116,19 @@ notebooklm-link-importer/
 
 ## Development
 
-Same requirements as above: **Node.js 18+**, then `npm install` and `npm run build`. Load **`dist`** via **Load unpacked** on `chrome://extensions` (see [Install in Chrome](#install-in-chrome-local-from-source)).
+Same requirements as above: **Node.js 18+**, then `npm install` and `npm run build`. Load **`dist`** via **Load unpacked** on `chrome://extensions` (see [Install from source](#install-in-chrome-local-from-source)).
+
+### Publish a release (maintainers)
+
+Pushing a **version tag** matching `v*` (e.g. `v1.0.0`) runs [`.github/workflows/release.yml`](.github/workflows/release.yml): it builds the extension, zips the contents of `dist/`, and creates a GitHub Release with **`NotebookLM-Link-Importer-<tag>.zip`** attached.
+
+```bash
+# Align package.json version with the tag if you like, then:
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Check the **Actions** tab on GitHub for the workflow run, then **Releases** for the downloadable ZIP.
 
 Optional — regenerate toolbar icons after editing `scripts/generate-icons.mjs`:
 
