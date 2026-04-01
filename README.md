@@ -119,7 +119,7 @@ notebooklm-link-importer/
 ├── .github/workflows/
 │   └── release.yml        # Tag v* → build ZIP and GitHub Release
 ├── docs/screenshots/      # README screenshots (PNG/WebP)
-├── public/icons/          # Toolbar icons (PNG); regenerate with npm run generate-icons
+├── icons/                 # Toolbar icons (PNG); regenerate with npm run generate-icons
 ├── scripts/
 │   └── generate-icons.mjs
 ├── src/

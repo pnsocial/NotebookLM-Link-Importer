@@ -9,7 +9,8 @@ import { fileURLToPath } from 'node:url'
 import sharp from 'sharp'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const outDir = join(__dirname, '..', 'public', 'icons')
+/** Toolbar icons at repo root — manifest uses `icons/icon*.png` (short path for Chrome on all OS). */
+const outDir = join(__dirname, '..', 'icons')
 
 /** One bookmark shape; padding ~8% so the symbol reads larger on the toolbar. */
 function iconSvg(size) {
