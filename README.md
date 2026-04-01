@@ -50,7 +50,8 @@ No separate API key: authentication follows your **Google session** for Notebook
 Pre-built ZIP files are attached to **Releases** on this GitHub repository (when maintainers publish a version). Open the repo → **Releases**, or append `/releases` to the repository URL. **You do not need to install Node.js or run `npm run build`.**
 
 1. Open the **Releases** page for this repository and download **`NotebookLM-Link-Importer-vX.Y.Z.zip`** from the latest release.
-![Donwload Release](docs/screenshots/download-releases.png)
+![Open Release](docs/screenshots/open-releases.png)
+![Donwload Zip](docs/screenshots/download-zip.png)
 2. Unzip the file. The extracted folder must contain **`manifest.json`** at the top level (if macOS adds an extra wrapper folder, open it until you see `manifest.json`).
 ![Unzip](docs/screenshots/extract-extension.png)
 3. In Chrome, go to `chrome://extensions`, turn **Developer mode** on, click **Load unpacked**, and select **that folder** (the one that directly contains `manifest.json`).
